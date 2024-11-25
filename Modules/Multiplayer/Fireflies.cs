@@ -141,10 +141,10 @@ namespace Grate.Modules.Multiplayer
             try
             {
                 ReloadConfiguration();
-                GestureTracker.Instance.leftTrigger.OnPressed += OnTriggerPressed;
-                GestureTracker.Instance.rightTrigger.OnPressed += OnTriggerPressed;
-                GestureTracker.Instance.leftTrigger.OnReleased += OnTriggerReleased;
-                GestureTracker.Instance.rightTrigger.OnReleased += OnTriggerReleased;
+                GestureTracker.Instance.leftGrip.OnPressed += OnGripPressed;
+                GestureTracker.Instance.rightGrip.OnPressed += OnGripPressed;
+                GestureTracker.Instance.leftGrip.OnReleased += OnGripReleased;
+                GestureTracker.Instance.rightGrip.OnReleased += OnGripReleased;
                 VRRigCachePatches.OnRigCached += OnRigCached;
             }
             catch (Exception e)
@@ -153,7 +153,7 @@ namespace Grate.Modules.Multiplayer
             }
         }
 
-        void OnTriggerPressed(InputTracker tracker)
+        void OnGripPressed(InputTracker tracker)
         {
             foreach (var firefly in fireflies)
             {
@@ -164,7 +164,7 @@ namespace Grate.Modules.Multiplayer
             }
             StopAllCoroutines();
             fireflies.RemoveAll(fly => fly is null);
-            bool isLeft = tracker == GestureTracker.Instance.leftTrigger;
+            bool isLeft = tracker == GestureTracker.Instance.leftGrip;
             var interactor = isLeft ? GestureTracker.Instance.leftPalmInteractor : GestureTracker.Instance.rightPalmInteractor;
             hand = interactor.transform;
             StartCoroutine(SpawnFireflies(hand, isLeft));
@@ -186,12 +186,12 @@ namespace Grate.Modules.Multiplayer
             }
         }
 
-        void OnTriggerReleased(InputTracker tracker)
+        void OnGripReleased(InputTracker tracker)
         {
             if (
-                tracker == GestureTracker.Instance.leftTrigger && hand == GestureTracker.Instance.leftPalmInteractor.transform
+                tracker == GestureTracker.Instance.leftGrip && hand == GestureTracker.Instance.leftPalmInteractor.transform
                 ||
-                tracker == GestureTracker.Instance.rightTrigger && hand == GestureTracker.Instance.rightPalmInteractor.transform)
+                tracker == GestureTracker.Instance.rightGrip && hand == GestureTracker.Instance.rightPalmInteractor.transform)
             {
                 StartCoroutine(ReleaseFireflies());
             }
@@ -251,10 +251,10 @@ namespace Grate.Modules.Multiplayer
 
                 if (GestureTracker.Instance)
                 {
-                    GestureTracker.Instance.leftTrigger.OnPressed -= OnTriggerPressed;
-                    GestureTracker.Instance.rightTrigger.OnPressed -= OnTriggerPressed;
-                    GestureTracker.Instance.leftTrigger.OnReleased -= OnTriggerReleased;
-                    GestureTracker.Instance.rightTrigger.OnReleased -= OnTriggerReleased;
+                    GestureTracker.Instance.leftGrip.OnPressed -= OnGripPressed;
+                    GestureTracker.Instance.rightGrip.OnPressed -= OnGripPressed;
+                    GestureTracker.Instance.leftGrip.OnReleased -= OnGripReleased;
+                    GestureTracker.Instance.rightGrip.OnReleased -= OnGripReleased;
                 }
             }
             catch (Exception e) { Logging.Exception(e); }
