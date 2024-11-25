@@ -75,7 +75,7 @@ namespace Grate.Modules
 
         public override string GetDisplayName()
         {
-            return DisplayName;
+            return "very speedy";
         }
         public override string Tutorial()
         {

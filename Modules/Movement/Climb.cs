@@ -12,7 +12,7 @@ namespace Grate.Modules.Movement
 {
     public class Climb : GrateModule
     {
-        public static readonly string DisplayName = "Climb";
+        public static readonly string DisplayName = "grippy monke";
         public GameObject climbableLeft, climbableRight;
         private InputTracker<float> leftGrip, rightGrip;
         private Transform leftHand, rightHand;
@@ -87,9 +87,9 @@ namespace Grate.Modules.Movement
         public void OnRelease(InputTracker tracker)
         {
             if (tracker == GestureTracker.Instance.leftGrip)
-                climbableLeft.SetActive(false);
+                climbableLeft.SetActive(true);
             else
-                climbableRight.SetActive(false);
+                climbableRight.SetActive(true);
         }
 
         protected override void Cleanup()

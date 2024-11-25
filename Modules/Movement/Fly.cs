@@ -44,12 +44,12 @@ namespace Grate.Modules.Movement
 
         public override string GetDisplayName()
         {
-            return "Fly";
+            return "creative mode";
         }
 
         public override string Tutorial()
         {
-            return "Use left stick to fly horizontally, and right stick to fly vertically.";
+            return "double jump with space";
         }
 
         protected override void OnEnable()
@@ -77,14 +77,14 @@ namespace Grate.Modules.Movement
                 section: DisplayName,
                 key: "speed",
                 defaultValue: 5,
-                description: "How fast you fly"
+                description: "how much you vroom vroom"
             );
 
             Acceleration = Plugin.configFile.Bind(
                 section: DisplayName,
                 key: "acceleration",
                 defaultValue: 5,
-                description: "How fast you accelerate"
+                description: "how much you vroom vroom but cooler"
             );
         }
 

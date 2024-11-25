@@ -9,7 +9,7 @@ namespace Grate.Modules
 {
     public class Swim : GrateModule
     {
-        public static readonly string DisplayName = "Swim";
+        public static readonly string DisplayName = "swimmy monke";
         public GameObject waterVolume;
 
         void LateUpdate()

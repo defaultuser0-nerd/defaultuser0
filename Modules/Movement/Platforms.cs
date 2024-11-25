@@ -155,7 +155,7 @@ namespace Grate.Modules.Movement
 
     public class Platforms : GrateModule
     {
-        public static readonly string DisplayName = "Platforms";
+        public static readonly string DisplayName = "plats";
         public static GameObject platformPrefab;
         public Platform left, right, main;
         InputTracker inputL, inputR;

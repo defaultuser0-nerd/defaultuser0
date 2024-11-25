@@ -13,7 +13,7 @@ namespace Grate.Modules.Movement
 {
     public class GrapplingHooks : GrateModule
     {
-        public static readonly string DisplayName = "Grappling Hooks";
+        public static readonly string DisplayName = "spooder man";
         private GameObject bananaGunPrefab, bananaGunL, bananaGunR;
         private Transform holsterL, holsterR;
         private Vector3 holsterOffset = new Vector3(0.15f, -0.15f, 0.15f);
@@ -155,8 +155,8 @@ namespace Grate.Modules.Movement
 
         public override string GetDisplayName()
         {
-            return DisplayName;
-        }
+            return "spooder man";
+        }                             
 
         public override string Tutorial()
         {

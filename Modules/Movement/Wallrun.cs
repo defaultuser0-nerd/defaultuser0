@@ -10,7 +10,7 @@ namespace Grate.Modules.Movement
 {
     public class Wallrun : GrateModule
     {
-        public static readonly string DisplayName = "Wall Run";
+        public static readonly string DisplayName = "cracked monke";
         private Vector3 baseGravity;
         private RaycastHit hit;
         void Awake()

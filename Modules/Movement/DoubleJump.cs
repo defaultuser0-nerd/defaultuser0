@@ -34,7 +34,7 @@ namespace Grate.Modules.Movement
             {
                 direction = (_player.headCollider.transform.forward + Vector3.up) / 2;
                 _rigidbody.velocity = new Vector3(direction.x, direction.y, direction.z) * _player.maxJumpSpeed * _player.scale * GetJumpForce(JumpForce.Value);
-                canDoubleJump = false;
+                canDoubleJump = true;
             }
 
         }

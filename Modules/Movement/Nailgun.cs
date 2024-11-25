@@ -12,7 +12,7 @@ namespace Grate.Modules.Movement
 {
     public class NailGun : GrateModule
     {
-        public static readonly string DisplayName = "Nail Gun";
+        public static readonly string DisplayName = "phillps screw";
         public static GameObject launcherPrefab, nailPrefab;
         public GameObject launcher;
         public GameObject[] nails = new GameObject[0];
