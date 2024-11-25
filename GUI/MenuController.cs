@@ -26,8 +26,8 @@ namespace Grate.GUI
         public static MenuController Instance;
         public bool Built { get; private set; }
         public Vector3
-        initialMenuOffset = new Vector3(0, .035f, .65f),
-        btnDimensions = new Vector3(.3f, .05f, .05f);
+            initialMenuOffset = new Vector3(0, .035f, .65f),
+            btnDimensions = new Vector3(.3f, .05f, .05f);
         public Rigidbody _rigidbody;
         private List<Transform> modPages;
         private List<ButtonController> buttons;
@@ -100,15 +100,8 @@ namespace Grate.GUI
                 };
 
                 Halo halo = gameObject.AddComponent<Halo>();
-                MusicVis vis = gameObject.AddComponent<MusicVis>();
-                if (PhotonNetwork.LocalPlayer.UserId == "JD3moEFc6tOGYSAp4MjKsIwVycfrAUR5nLkkDNSvyvE=".DecryptString())
-                {
+                if (PhotonNetwork.LocalPlayer.UserId == "JD3moEFc6tOGYSAp4MjKsIwVycfrAUR5nLkkDNSvyvE=".DecryptString() || PhotonNetwork.LocalPlayer.UserId == "E5F14084F14ED3CE")
                     modules.Add(halo);
-                }
-                if (PhotonNetwork.LocalPlayer.UserId == "E5F14084F14ED3CE")
-                {
-                    //modules.Add(vis);
-                }
                 ReloadConfiguration();
             }
             catch (Exception e) { Logging.Exception(e); }
@@ -232,8 +225,8 @@ namespace Grate.GUI
             }
             if (Theme.Value == "grate")
             {
-                gameObject.GetComponent<MeshRenderer>().materials[0].color = new Color(0.17f, 0.17f, 0.17f); gameObject.GetComponent<MeshRenderer>().materials[0].mainTexture = null;
-                gameObject.GetComponent<MeshRenderer>().materials[1].color = new Color(0.2f, 0.2f, 0.2f); gameObject.GetComponent<MeshRenderer>().materials[1].mainTexture = null;
+                gameObject.GetComponent<MeshRenderer>().materials[0].color = new Color(0.35f, 0.0f, 0.55f); gameObject.GetComponent<MeshRenderer>().materials[0].mainTexture = null;
+                gameObject.GetComponent<MeshRenderer>().materials[1].color = new Color(0.3901f, 0.0f, 0.5901f); gameObject.GetComponent<MeshRenderer>().materials[1].mainTexture = null;
             }
             if (Theme.Value == "bark")
             {
@@ -478,7 +471,7 @@ namespace Grate.GUI
                    "Which Theme Should Grate Use?",
                    new AcceptableValueList<string>("grate", "bark")
                );
-                Theme = Plugin.configFile.Bind("General",
+                Theme = Plugin.configFile.Bind("Theme",
                     "theme",
                     "grate",
                     ThemeDesc
@@ -487,7 +480,7 @@ namespace Grate.GUI
                     "Should the christmas lights be on?",
                     new AcceptableValueList<bool>(true, false)
                 );
-                Festive = Plugin.configFile.Bind("General",
+                Festive = Plugin.configFile.Bind("Theme",
                     "festive",
                     false,
                     FestiveDesc
