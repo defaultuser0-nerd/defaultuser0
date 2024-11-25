@@ -15,7 +15,7 @@ namespace Grate.Modules.Physics
 {
     public class Potions : GrateModule
     {
-        public static readonly string DisplayName = "Potions";
+        public static readonly string DisplayName = "size changer";
         private GameObject bottlePrefab, shrinkPotion, growPotion;
         private Material shrinkMaterial, growMaterial;
         private Transform holsterL, holsterR;
