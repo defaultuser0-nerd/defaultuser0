@@ -1,4 +1,4 @@
-<h1 align="center">defaultuser0</h1>
+<h1 align="center">defaultbark0</h1>
 <h3 align="center">Fork for a reason, show love to Kyle the OG creator</h2>
 <h3 align="center">Modifed Grate, compile it if you want it I guess.</h2>
 
