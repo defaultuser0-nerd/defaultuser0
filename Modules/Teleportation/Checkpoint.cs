@@ -16,7 +16,7 @@ namespace Grate.Modules.Teleportation
 {
     public class Checkpoint : GrateModule
     {
-        public static readonly string DisplayName = "Checkpoint";
+        public static readonly string DisplayName = "spawnpoint";
         public static Checkpoint Instance;
 
         private Transform checkpointMarker;

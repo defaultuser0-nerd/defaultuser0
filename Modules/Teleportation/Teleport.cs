@@ -14,7 +14,7 @@ namespace Grate.Modules
 {
     public class Teleport : GrateModule
     {
-        public static readonly string DisplayName = "Teleport";
+        public static readonly string DisplayName = "/tp";
         public static readonly int layerMask = LayerMask.GetMask("Default", "Gorilla Object");
 
         private Transform teleportMarker, window;

@@ -14,7 +14,7 @@ namespace Grate.Modules.Teleportation
 {
     public class Pearl : GrateModule
     {
-        public static readonly string DisplayName = "Pearl";
+        public static readonly string DisplayName = "ender pearl";
         public static Pearl Instance;
         private GameObject pearlPrefab;
         ThrowablePearl pearl;

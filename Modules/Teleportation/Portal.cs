@@ -14,7 +14,7 @@ namespace Grate.Modules.Teleportation
 {
     public class Portal : GrateModule
     {
-        public static readonly string DisplayName = "Portals";
+        public static readonly string DisplayName = "portal 2";
         public static GameObject launcherPrefab, bluePortal, orangePortal;
         public GameObject launcher;
         ParticleSystem[] smokeSystems;
